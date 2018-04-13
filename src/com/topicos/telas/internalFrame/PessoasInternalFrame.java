@@ -10,7 +10,7 @@ import java.awt.*;
 
 import javax.swing.*;
 
-public class PessoasInternalFrame extends JInternalFrame {
+public class PessoasInternalFrame extends BaseInternalFrame {
     private JTextField cidadeTextField;
     private JTextField cepTextField;
     private JTextField nomeTextField;
@@ -23,10 +23,7 @@ public class PessoasInternalFrame extends JInternalFrame {
     private JTextField numeroTextField;
 
     public PessoasInternalFrame() {
-        setClosable(true);
         setTitle("Cadastro de Pessoas");
-        setBounds(100, 100, 755, 501);
-        getContentPane().setLayout(null);
 
         JLabel nomeLabel = new JLabel("Nome :");
         nomeLabel.setBounds(35, 27, 70, 15);

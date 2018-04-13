@@ -1,15 +1,7 @@
 package com.topicos.telas.frames.principalFrame;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
+import javax.swing.*;
 import java.awt.Color;
-import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 import java.awt.Toolkit;
 import java.awt.event.ActionListener;
@@ -17,6 +9,7 @@ import java.awt.event.ActionListener;
 import com.topicos.listenners.PrincipalListenner;
 import com.topicos.telas.internalFrame.AulasInternalFrame;
 import com.topicos.telas.internalFrame.PessoasInternalFrame;
+import com.topicos.telas.internalFrame.SalasInternalFrame;
 
 public class Principal extends JFrame {
 
@@ -25,6 +18,12 @@ public class Principal extends JFrame {
     private JMenuBar menuBar = new JMenuBar();
 
     private JMenu ArquivoMenu = new JMenu("Arquivo");
+
+    private JMenuItem AddSalaArquivoItem = new JMenuItem("Adicionar Sala");
+
+    private JMenuItem AddPessoaArquivoItem = new JMenuItem("Adicionar Pessoa");
+
+    private JMenuItem AddTurmaArquivoItem = new JMenuItem("Adicionar Turma");
 
     private JMenuItem SairArquivoItem = new JMenuItem("Sair");
 
@@ -36,6 +35,7 @@ public class Principal extends JFrame {
 
     private JMenu AjudaMenu = new JMenu("Ajuda");
     private PessoasInternalFrame pessoasInternalFrame = new PessoasInternalFrame();
+    private SalasInternalFrame salasInternalFrame = new SalasInternalFrame();
     private AulasInternalFrame aulasInternalFrame = new AulasInternalFrame();
 
     private JMenuItem SobreItem = new JMenuItem("Sobre");
@@ -53,6 +53,14 @@ public class Principal extends JFrame {
 
         menuBar.add(ArquivoMenu);
 
+        ArquivoMenu.add(AddSalaArquivoItem);
+
+        ArquivoMenu.add(AddPessoaArquivoItem);
+
+        ArquivoMenu.add(AddTurmaArquivoItem);
+
+        ArquivoMenu.addSeparator();
+
         ArquivoMenu.add(SairArquivoItem);
 
         menuBar.add(AdminMenu);
@@ -69,12 +77,12 @@ public class Principal extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
-        JPanel panelOpcoes = new JPanel();
-        panelOpcoes.setBorder(new LineBorder(null));
-        panelOpcoes.setBounds(0, 0, 1920, 53);
-//        panelOpcoes.setBounds(0,0,811,JFrame.MAXIMIZED_V);
-        contentPane.add(panelOpcoes);
-        panelOpcoes.setLayout(null);
+//        JPanel panelOpcoes = new JPanel();
+//        panelOpcoes.setBorder(new LineBorder(null));
+//        panelOpcoes.setBounds(0, 0, 1920, 53);
+////        panelOpcoes.setBounds(0,0,811,JFrame.MAXIMIZED_V);
+//        contentPane.add(panelOpcoes);
+//        panelOpcoes.setLayout(null);
 /*
 
         ImageIcon icon = new ImageIcon(Principal.class.getResource("/com/topicos/telas/background/blur2.jpg"));
@@ -86,49 +94,50 @@ public class Principal extends JFrame {
         contentPane.add(backbround);
 */
 
-        JButton btnExit = new JButton("Exit");
-        btnExit.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-        btnExit.setVerticalTextPosition(SwingConstants.BOTTOM);
-        btnExit.setBackground(UIManager.getColor("Button.background"));
-        btnExit.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/exit.png")));
-        btnExit.setBounds(12, 6, 70, 45);
-        panelOpcoes.add(btnExit);
+//        JButton btnExit = new JButton("Exit");
+//        btnExit.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
+//        btnExit.setVerticalTextPosition(SwingConstants.BOTTOM);
+//        btnExit.setBackground(UIManager.getColor("Button.background"));
+//        btnExit.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/exit.png")));
+//        btnExit.setBounds(12, 6, 70, 45);
+//        panelOpcoes.add(btnExit);
+//
+//        JButton btnSalvar = new JButton("Salvar");
+//        btnSalvar.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/floppy_disk_sh.png")));
+//        btnSalvar.setBorder(new LineBorder(new Color(0, 0, 0)));
+//        btnSalvar.setIconTextGap(1);
+//        btnSalvar.setBounds(94, 6, 70, 45);
+//        panelOpcoes.add(btnSalvar);
+//
+//        JButton btnLogout = new JButton("Logout");
+//        btnLogout.setBorder(new LineBorder(new Color(0, 0, 0)));
+//        btnLogout.setBounds(176, 6, 81, 45);
+//        btnLogout.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/logout.png")));
+//        panelOpcoes.add(btnLogout);
+//
+//        JButton btnCadastrar = new JButton("Cadastrar");
+//        btnCadastrar.setBorder(new LineBorder(new Color(0, 0, 0)));
+//        btnCadastrar.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/register.png")));
+//        btnCadastrar.setBounds(269, 6, 131, 45);
+//        panelOpcoes.add(btnCadastrar);
+//
+//        JButton btnCadastrarTurma = new JButton("Cadastrar Turma");
+//        btnCadastrarTurma.setBorder(new LineBorder(new Color(0, 0, 0)));
+//        btnCadastrarTurma.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/register.png")));
+//        btnCadastrarTurma.setBounds(412, 6, 131, 45);
+//        panelOpcoes.add(btnCadastrarTurma);
 
-        JButton btnSalvar = new JButton("Salvar");
-        btnSalvar.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/floppy_disk_sh.png")));
-        btnSalvar.setBorder(new LineBorder(new Color(0, 0, 0)));
-        btnSalvar.setIconTextGap(1);
-        btnSalvar.setBounds(94, 6, 70, 45);
-        panelOpcoes.add(btnSalvar);
+        //ActionListener list = new ListennerPrincipalFrame(btnCadastrar, SobreItem);
 
-        JButton btnLogout = new JButton("Logout");
-        btnLogout.setBorder(new LineBorder(new Color(0, 0, 0)));
-        btnLogout.setBounds(176, 6, 81, 45);
-        btnLogout.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/logout.png")));
-        panelOpcoes.add(btnLogout);
+        //SobreItem.addActionListener(list);
 
-        JButton btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.setBorder(new LineBorder(new Color(0, 0, 0)));
-        btnCadastrar.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/register.png")));
-        btnCadastrar.setBounds(269, 6, 131, 45);
-        panelOpcoes.add(btnCadastrar);
-
-        JButton btnCadastrarTurma = new JButton("Cadastrar Turma");
-        btnCadastrarTurma.setBorder(new LineBorder(new Color(0, 0, 0)));
-        btnCadastrarTurma.setIcon(new ImageIcon(Principal.class.getResource("/com/topicos/telas/icones/register.png")));
-        btnCadastrarTurma.setBounds(412, 6, 131, 45);
-        panelOpcoes.add(btnCadastrarTurma);
-
-        ActionListener list = new ListennerPrincipalFrame(btnCadastrar, SobreItem);
-
-        SobreItem.addActionListener(list);
-
-        btnCadastrar.addActionListener(list);
+        //btnCadastrar.addActionListener(list);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setUndecorated(true);
 
         contentPane.add(pessoasInternalFrame);
         contentPane.add(aulasInternalFrame);
+        contentPane.add(salasInternalFrame);
 
         setResizable(false);
         setVisible(true);
@@ -137,13 +146,17 @@ public class Principal extends JFrame {
             dispose();
         });
 
-        btnCadastrar.addActionListener(e -> {
-            pessoasInternalFrame.setVisible(true);
+        AddSalaArquivoItem.addActionListener(e->{
+            salasInternalFrame.setVisible(true);
         });
 
-        btnCadastrarTurma.addActionListener(e -> {
-            aulasInternalFrame.setVisible(true);
-        });
+//        btnCadastrar.addActionListener(e -> {
+//            pessoasInternalFrame.setVisible(true);
+//        });
+//
+//        btnCadastrarTurma.addActionListener(e -> {
+//            aulasInternalFrame.setVisible(true);
+//        });
 
 
     }
